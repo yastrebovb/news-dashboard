@@ -1,29 +1,24 @@
 import { REQUEST_NEWS, RECEIVE_NEWS, API_FAIL } from '../constants/actionTypes'
 
-const newsDefaultState = []
+const newsDefaultState = {
+  loading: false,
+  failed: false,
+  all: []
+}
 
 export default (state = newsDefaultState, action) => {
   switch (action.type) {
     case REQUEST_NEWS:
-      return [
+      return {
         ...state,
-        {
-          channelName: action.channel,
-          articles: [],
-          loading: true,
-          failed: false
-        }
-      ]
+        loading: true
+      }
     case RECEIVE_NEWS:
-      return [...state].map(channel =>
-        channel.channelName === action.channel
-          ? {
-              ...channel,
-              articles: action.payload.articles,
-              loading: false
-            }
-          : channel
-      )
+      return {
+        ...state,
+        loading: false,
+        all: action.payload.articles
+      }
     default:
       return state
   }

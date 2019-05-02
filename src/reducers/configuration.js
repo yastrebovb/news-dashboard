@@ -1,7 +1,23 @@
 import { ADD_CHANNEL, REMOVE_CHANNEL } from '../constants/actionTypes'
 
 const configurationDefaultState = {
-  channels: ['techcrunch']
+  availableChannels: [
+    'the-new-york-times',
+    'the-wall-street-journal',
+    'the-washington-post',
+    'usa-today',
+    'bbc-news',
+    'cnn',
+    'reuters',
+    'newsweek',
+    'google-news',
+    'fortune'
+  ],
+  selectedChannels: [
+    'the-new-york-times',
+    'bbc-news',
+    'the-wall-street-journal'
+  ]
 }
 
 export default (state = configurationDefaultState, action) => {
@@ -9,12 +25,14 @@ export default (state = configurationDefaultState, action) => {
     case ADD_CHANNEL:
       return {
         ...state,
-        channels: [...state.channels, action.channel]
+        selectedChannels: [...state.selectedChannels, action.channel]
       }
     case REMOVE_CHANNEL:
       return {
         ...state,
-        channels: state.channels.filter(channel => channel !== action.channel)
+        selectedChannels: state.selectedChannels.filter(
+          channel => channel !== action.channel
+        )
       }
     default:
       return state

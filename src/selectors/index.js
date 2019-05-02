@@ -1,13 +1,14 @@
 import { createSelector } from 'reselect'
 
-const splitSelector = state => state.split
+const getArticlesByChannel = (state, props) => {
+  return state.news.all.filter(
+    article => article.source.id === props.channelName
+  )
+}
 
-export const getDividedTotal = createSelector(
-  splitSelector,
-  split => parseFloat((split.total / split.friends).toFixed(2))
-)
-
-export const getPersonsQuantity = createSelector(
-  splitSelector,
-  split => split.friends
-)
+export const makeGetArticlesByChannel = () => {
+  return createSelector(
+    getArticlesByChannel,
+    articles => articles
+  )
+}

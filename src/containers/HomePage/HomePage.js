@@ -1,19 +1,39 @@
-import React from 'react'
+import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import Channel from '../Channel'
+import { fetchNews } from '../../actions/news.js'
+import Channel from '../Channel/'
 
-const HomePage = props => (
-  <div>
-    {props.channels.map(channel => (
-      <Channel channelName={channel} />
-    ))}
-  </div>
-)
+class HomePage extends Component {
+  componentDidMount() {
+    this.props.fetchNews(this.props.channels)
+  }
 
-const mapStateToProps = state => {
-  return {
-    channels: state.configuration.channels
+  render() {
+    return (
+      <div>
+        {this.props.channels.map(channel => (
+          <Channel channelName={channel} />
+        ))}
+      </div>
+    )
   }
 }
 
-export default connect(mapStateToProps)(HomePage)
+const mapStateToProps = state => {
+  return {
+    channels: state.configuration.selectedChannels
+  }
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    fetchNews: channels => {
+      dispatch(fetchNews(channels))
+    }
+  }
+}
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(HomePage)

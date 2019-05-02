@@ -2,14 +2,12 @@ import { REQUEST_NEWS, RECEIVE_NEWS, API_FAIL } from '../constants/actionTypes'
 
 const API_KEY = process.env.REACT_APP_NEWS_API_TOKEN
 
-export const requestNews = channel => ({
-  type: REQUEST_NEWS,
-  channel
+export const requestNews = () => ({
+  type: REQUEST_NEWS
 })
 
-export const receiveNews = (channel, payload) => ({
+export const receiveNews = payload => ({
   type: RECEIVE_NEWS,
-  channel,
   payload
 })
 
@@ -17,12 +15,12 @@ export const newsApiFail = () => ({
   type: API_FAIL
 })
 
-export function fetchNews(channel) {
+export function fetchNews(channels = channels.toString()) {
   return function(dispatch) {
-    dispatch(requestNews(channel))
+    dispatch(requestNews())
 
     return fetch(
-      `https://newsapi.org/v2/top-headlines?sources=${channel}&apiKey=${API_KEY}`
+      `https://newsapi.org/v2/everything?sources=${channels}&pageSize=100&apiKey=${API_KEY}`
     )
       .then(
         res => res.json(),
@@ -30,6 +28,6 @@ export function fetchNews(channel) {
           dispatch(newsApiFail())
         }
       )
-      .then(json => dispatch(receiveNews(channel, json)))
+      .then(json => dispatch(receiveNews(json)))
   }
 }

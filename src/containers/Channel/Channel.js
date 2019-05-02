@@ -1,24 +1,25 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { connect } from 'react-redux'
-import { fetchNews } from '../../actions/news'
+import { makeGetArticlesByChannel } from '../../selectors/'
 
-class Channel extends Component {
-  componentDidMount() {
-    this.props.fetchNews()
+const Channel = props => (
+  <div>
+    {props.articles.map(article => (
+      <p>{article.source.name}</p>
+    ))}
+  </div>
+)
+
+const makeMapStateToProps = () => {
+  const getArticlesByChannel = makeGetArticlesByChannel()
+
+  const mapStateToProps = (state, props) => {
+    return {
+      articles: getArticlesByChannel(state, props)
+    }
   }
 
-  render() {
-    return <div />
-  }
+  return mapStateToProps
 }
 
-const mapDispatchToProps = (dispatch, ownProps) => {
-  return {
-    fetchNews: () => dispatch(fetchNews(ownProps.channelName))
-  }
-}
-
-export default connect(
-  null,
-  mapDispatchToProps
-)(Channel)
+export default connect(makeMapStateToProps)(Channel)
