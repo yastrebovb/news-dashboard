@@ -2,7 +2,7 @@ import styled, { createGlobalStyle } from 'styled-components'
 
 export const GlobalStyle = createGlobalStyle`
   @import url('https://fonts.googleapis.com/css?family=Lato');
-  @import url('https://fonts.googleapis.com/css?family=Roboto+Slab');
+  @import url('https://fonts.googleapis.com/css?family=Playfair+Display:700');
 
   html {
     height: 100%;
