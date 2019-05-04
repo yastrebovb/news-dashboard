@@ -1,5 +1,12 @@
 import React from 'react'
-import { ArticleStyled, Image, Title, Date, Description } from './style'
+import {
+  ArticleStyled,
+  Image,
+  Content,
+  Title,
+  Date,
+  Description
+} from './style'
 
 const Article = ({
   viewMode,
@@ -8,9 +15,11 @@ const Article = ({
   return (
     <ArticleStyled>
       {viewMode === 'image' && <Image imgUrl={urlToImage} />}
-      <Title>{title}</Title>
-      <Date>{publishedAt}</Date>
-      {viewMode === 'big' && <Description>{description}</Description>}
+      <Content>
+        <Title>{title}</Title>
+        <Date>{publishedAt}</Date>
+        {viewMode === 'big' && <Description>{description}</Description>}
+      </Content>
     </ArticleStyled>
   )
 }

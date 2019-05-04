@@ -1,7 +1,10 @@
 import styled from 'styled-components'
 
 export const ArticleStyled = styled.article`
-  width: 300px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 320px;
   margin: 14px 0;
   padding: 12px 10px;
   color: #57606f;
@@ -11,11 +14,17 @@ export const ArticleStyled = styled.article`
 `
 
 export const Image = styled.img`
-  width: 50px;
-  height: 50px;
+  width: 60px;
+  height: 60px;
   background-image: url(${props => props.imgUrl});
   background-size: cover;
   border-radius: 50%;
+`
+
+export const Content = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 70%;
 `
 
 export const Title = styled.p`
