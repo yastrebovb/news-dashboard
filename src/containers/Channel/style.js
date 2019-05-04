@@ -43,8 +43,12 @@ export const Option = styled.li`
 
 export const Articles = styled.div`
   display: flex;
-  justify-content: space-between;
   flex-wrap: wrap;
+
+  &::after {
+    content: '';
+    flex: auto;
+  }
 `
 
 export const Button = styled.button`

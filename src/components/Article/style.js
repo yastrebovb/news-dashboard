@@ -5,12 +5,12 @@ export const ArticleStyled = styled.article`
   justify-content: space-between;
   align-items: center;
   width: 320px;
-  margin: 14px 0;
+  margin: 18px 12px;
   padding: 12px 10px;
   color: #57606f;
   background-color: #ffffff;
   border-radius: 12px;
-  box-shadow: 27px 28px 23px 10px rgba(240, 241, 247, 1);
+  box-shadow: 10px 10px 28px 4px rgba(228, 231, 240, 0.45);
 `
 
 export const Image = styled.img`
