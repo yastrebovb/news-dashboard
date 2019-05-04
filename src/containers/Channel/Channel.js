@@ -4,11 +4,12 @@ import { makeGetChannelName, makeGetArticlesByChannel } from '../../selectors/'
 import Article from '../../components/Article'
 import {
   ChannelStyled,
-  ChannelHeading,
+  ChannelHeader,
   Select,
   Option,
   Articles,
-  Heading
+  Heading,
+  Button
 } from './style'
 
 class Channel extends Component {
@@ -35,7 +36,7 @@ class Channel extends Component {
 
     return (
       <ChannelStyled>
-        <ChannelHeading>
+        <ChannelHeader>
           <Heading>{channelName}</Heading>
           <Select>
             <Option
@@ -51,7 +52,7 @@ class Channel extends Component {
               big
             </Option>
           </Select>
-        </ChannelHeading>
+        </ChannelHeader>
         <Articles>
           {articles.map(
             ({ title, description, publishedAt, urlToImage }, index) =>
@@ -68,6 +69,9 @@ class Channel extends Component {
               )
           )}
         </Articles>
+        <Button onClick={this.showMoreArticles}>
+          more <span>&#8964;</span>
+        </Button>
       </ChannelStyled>
     )
   }

@@ -4,7 +4,7 @@ export const ChannelStyled = styled.div`
   margin: 60px 35px;
 `
 
-export const ChannelHeading = styled.div`
+export const ChannelHeader = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -45,4 +45,23 @@ export const Articles = styled.div`
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+`
+
+export const Button = styled.button`
+  font-family: 'Playfair Display', Times, serif;
+  font-size: 18px;
+  color: #ccd2e7;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.2s linear;
+
+  span {
+    font-size: 24px;
+  }
+
+  &:hover {
+    color: #3a3c4c;
+  }
 `
