@@ -21,9 +21,7 @@ export default () => {
 
   store.subscribe(
     throttle(() => {
-      saveState({
-        state: store.getState()
-      })
+      saveState(store.getState())
     }, 1000)
   )
 

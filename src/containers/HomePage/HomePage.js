@@ -5,7 +5,13 @@ import Channel from '../Channel/'
 
 class HomePage extends Component {
   componentDidMount() {
-    this.props.fetchNews(this.props.channels)
+    const { lastUpdate, fetchNews, channels } = this.props
+    const currentTime = Math.floor(Date.now() / 60000)
+
+    if (currentTime - lastUpdate > 15) {
+      // Update news
+      fetchNews(channels)
+    }
   }
 
   render() {
@@ -21,7 +27,8 @@ class HomePage extends Component {
 
 const mapStateToProps = state => {
   return {
-    channels: state.configuration.selectedChannels
+    channels: state.configuration.selectedChannels,
+    lastUpdate: state.news.lastUpdate
   }
 }
 
