@@ -1,5 +1,7 @@
 import { createSelector } from 'reselect'
 
+const lastUpdatedSelector = state => state.news.lastUpdated
+
 const getArticlesByChannel = (state, props) => {
   return state.news.all.filter(article => article.source.id === props.channelId)
 }
@@ -25,3 +27,8 @@ export const makeGetChannelName = () => {
     channelName => channelName
   )
 }
+
+export const getLastUpdateDiff = createSelector(
+  lastUpdatedSelector,
+  lastUpdated => Math.floor(Date.now() / 60000) - lastUpdated
+)

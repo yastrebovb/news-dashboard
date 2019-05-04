@@ -1,15 +1,14 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { fetchNews } from '../../actions/news.js'
+import { getLastUpdateDiff } from '../../selectors/'
 import Channel from '../Channel/'
 
 class HomePage extends Component {
   componentDidMount() {
-    const { lastUpdate, fetchNews, channels } = this.props
-    const currentTime = Math.floor(Date.now() / 60000)
+    const { lastUpdated, fetchNews, channels } = this.props
 
-    if (currentTime - lastUpdate > 15) {
-      // Update news
+    if (lastUpdated > 15) {
       fetchNews(channels)
     }
   }
@@ -28,7 +27,7 @@ class HomePage extends Component {
 const mapStateToProps = state => {
   return {
     channels: state.configuration.selectedChannels,
-    lastUpdate: state.news.lastUpdate
+    lastUpdated: getLastUpdateDiff(state)
   }
 }
 
