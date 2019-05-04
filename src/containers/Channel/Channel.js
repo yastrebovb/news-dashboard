@@ -26,10 +26,12 @@ class Channel extends Component {
           {articles.map(({ title, description, publishedAt, urlToImage }) => (
             <Article
               viewMode={this.state.viewMode}
-              title={title}
-              description={description}
-              publishedAt={publishedAt}
-              urlToImage={urlToImage}
+              render={{
+                title,
+                description,
+                publishedAt,
+                urlToImage
+              }}
             />
           ))}
         </Articles>

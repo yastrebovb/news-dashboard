@@ -1,7 +1,10 @@
 import React from 'react'
 import { ArticleStyled, Image, Title, Date, Description } from './style'
 
-const Article = ({ viewMode, title, description, publishedAt, urlToImage }) => {
+const Article = ({
+  viewMode,
+  render: { title, description, publishedAt, urlToImage }
+}) => {
   return (
     <ArticleStyled>
       {viewMode === 'image' && <Image imgUrl={urlToImage} />}

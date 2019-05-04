@@ -3,7 +3,7 @@ import { REQUEST_NEWS, RECEIVE_NEWS, API_FAIL } from '../constants/actionTypes'
 const newsDefaultState = {
   loading: false,
   failed: false,
-  lastUpdate: 0,
+  lastUpdated: 0,
   all: []
 }
 
@@ -18,7 +18,7 @@ export default (state = newsDefaultState, action) => {
       return {
         ...state,
         loading: false,
-        lastUpdate: action.updateDate,
+        lastUpdated: action.updateDate,
         all: action.payload.articles
       }
     default:
