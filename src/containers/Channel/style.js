@@ -5,7 +5,7 @@ export const ChannelStyled = styled.div`
 `
 
 export const Heading = styled.h3`
-  font-family: Times, serif;
+  font-family: 'Roboto Slab', Times, serif;
   font-size: 24px;
   font-weight: 600;
 `

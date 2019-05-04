@@ -1,12 +1,15 @@
 import styled, { createGlobalStyle } from 'styled-components'
 
 export const GlobalStyle = createGlobalStyle`
-  @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
+  @import url('https://fonts.googleapis.com/css?family=Lato');
+  @import url('https://fonts.googleapis.com/css?family=Roboto+Slab');
 
   html {
     height: 100%;
     box-sizing: border-box;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Lato', sans-serif;
+    color: #3a3c4c;
+    background-color: #f6f7fb;
   }
 
   html, body, #root{

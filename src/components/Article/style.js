@@ -2,6 +2,10 @@ import styled from 'styled-components'
 
 export const ArticleStyled = styled.article`
   width: 300px;
+  margin: 20px 0;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 27px 28px 23px 10px rgba(240, 241, 247, 1);
 `
 
 export const Image = styled.img`
