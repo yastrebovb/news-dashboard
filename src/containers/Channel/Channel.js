@@ -69,9 +69,11 @@ class Channel extends Component {
               )
           )}
         </Articles>
-        <Button onClick={this.showMoreArticles}>
-          more <span>&#8964;</span>
-        </Button>
+        {articles.length > visibleArticles && (
+          <Button onClick={this.showMoreArticles}>
+            more <span>&#8964;</span>
+          </Button>
+        )}
       </ChannelStyled>
     )
   }
