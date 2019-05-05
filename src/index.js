@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
 import AppRouter from './routes/AppRouter'
 import configureStore from './store/configureStore'
+import 'whatwg-fetch'
 import 'normalize.css'
 
 const store = configureStore()
