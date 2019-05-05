@@ -9,7 +9,7 @@ const SwitchLink = withRouter(
       style={defaultStyle}
       activeStyle={activeStyle}
     >
-      {pathname === firstLink ? '+' : 'x'}
+      +
     </NavLink>
   )
 )
