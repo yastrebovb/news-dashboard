@@ -2,6 +2,7 @@ import { createStore, applyMiddleware, compose } from 'redux'
 import thunk from 'redux-thunk'
 import { logger } from 'redux-logger'
 import { loadState, saveState } from './localStorage'
+import { fetchMiddleWate } from '../middlewares'
 import reducers from '../reducers'
 import throttle from 'lodash/throttle'
 
@@ -12,7 +13,7 @@ export default () => {
     reducers,
     persistedState,
     compose(
-      applyMiddleware(thunk, logger),
+      applyMiddleware(thunk, logger, fetchMiddleWate),
       window.__REDUX_DEVTOOLS_EXTENSION__
         ? window.__REDUX_DEVTOOLS_EXTENSION__()
         : f => f
