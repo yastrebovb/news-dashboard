@@ -2,17 +2,17 @@ import { REQUEST_NEWS, RECEIVE_NEWS, API_FAIL } from '../constants/actionTypes'
 
 const API_KEY = process.env.REACT_APP_NEWS_API_TOKEN
 
-export const requestNews = () => ({
+const requestNews = () => ({
   type: REQUEST_NEWS
 })
 
-export const receiveNews = payload => ({
+const receiveNews = payload => ({
   type: RECEIVE_NEWS,
   updateDate: Math.floor(Date.now() / 60000),
   payload
 })
 
-export const newsApiFail = () => ({
+const newsApiFail = () => ({
   type: API_FAIL
 })
 

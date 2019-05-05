@@ -14,6 +14,10 @@ const getChannelName = (state, props) => {
   return articleWithId ? articleWithId.source.name : null
 }
 
+const isChannelSelected = (state, channel) => {
+  return state.configuration.selectedChannels.includes(channel)
+}
+
 export const makeGetArticlesByChannel = () => {
   return createSelector(
     getArticlesByChannel,
@@ -25,6 +29,13 @@ export const makeGetChannelName = () => {
   return createSelector(
     getChannelName,
     channelName => channelName
+  )
+}
+
+export const makeIsChannelSelected = () => {
+  return createSelector(
+    isChannelSelected,
+    channel => channel
   )
 }
 

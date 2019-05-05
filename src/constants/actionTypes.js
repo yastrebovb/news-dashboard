@@ -1,6 +1,6 @@
-export const ADD_CHANNEL = 'ADD_CHANNEL'
+export const SELECT_CHANNEL = 'SELECT_CHANNEL'
 
-export const REMOVE_CHANNEL = 'REMOVE_CHANNEL'
+export const DESELECT_CHANNEL = 'DESELECT_CHANNEL'
 
 export const REQUEST_NEWS = 'REQUEST_NEWS'
 

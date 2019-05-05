@@ -19,8 +19,3 @@ export const Heading = styled.h2`
   font-size: 22px;
   text-align: center;
 `
-
-export const Channel = styled.p`
-  text-align: center;
-  color: ${props => (props.selected ? '#ecf0f1' : 'rgba(236, 240, 241, 0.6)')};
-`

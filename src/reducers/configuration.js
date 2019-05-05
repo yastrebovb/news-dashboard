@@ -1,4 +1,4 @@
-import { ADD_CHANNEL, REMOVE_CHANNEL } from '../constants/actionTypes'
+import { SELECT_CHANNEL, DESELECT_CHANNEL } from '../constants/actionTypes'
 
 const configurationDefaultState = {
   availableChannels: [
@@ -22,12 +22,12 @@ const configurationDefaultState = {
 
 export default (state = configurationDefaultState, action) => {
   switch (action.type) {
-    case ADD_CHANNEL:
+    case SELECT_CHANNEL:
       return {
         ...state,
         selectedChannels: [...state.selectedChannels, action.channel]
       }
-    case REMOVE_CHANNEL:
+    case DESELECT_CHANNEL:
       return {
         ...state,
         selectedChannels: state.selectedChannels.filter(

@@ -1,11 +1,22 @@
-import { ADD_CHANNEL, REMOVE_CHANNEL } from '../constants/actionTypes'
+import { SELECT_CHANNEL, DESELECT_CHANNEL } from '../constants/actionTypes'
+import { makeIsChannelSelected } from '../selectors'
 
-export const addChannel = channel => ({
-  type: ADD_CHANNEL,
+const selectChannel = channel => ({
+  type: SELECT_CHANNEL,
   channel
 })
 
-export const removeChannel = channel => ({
-  type: REMOVE_CHANNEL,
+const deselectChannel = channel => ({
+  type: DESELECT_CHANNEL,
   channel
 })
+
+export const toggleChannel = channel => {
+  const isChannelSelected = makeIsChannelSelected()
+
+  return (dispatch, getState) => {
+    isChannelSelected(getState(), channel)
+      ? dispatch(deselectChannel(channel))
+      : dispatch(selectChannel(channel))
+  }
+}
