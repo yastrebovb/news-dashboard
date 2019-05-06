@@ -17,7 +17,7 @@ class HomePage extends Component {
     return (
       <div>
         {this.props.channels.map(channel => (
-          <Channel channelId={channel} />
+          <Channel channelId={channel} key={channel} />
         ))}
       </div>
     )

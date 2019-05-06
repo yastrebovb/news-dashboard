@@ -55,7 +55,7 @@ class Channel extends Component {
         </ChannelHeader>
         <Articles>
           {articles.map(
-            ({ title, description, publishedAt, urlToImage }, index) =>
+            ({ title, description, publishedAt, urlToImage, url }, index) =>
               index < visibleArticles && (
                 <Article
                   viewMode={viewMode}
@@ -65,6 +65,7 @@ class Channel extends Component {
                     publishedAt,
                     urlToImage
                   }}
+                  key={url}
                 />
               )
           )}
