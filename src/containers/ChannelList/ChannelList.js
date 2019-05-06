@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { toggleChannel } from '../../actions/configuration'
+import reactStringReplace from 'react-string-replace'
 import { List, Item } from './style'
 
 const ChannelList = ({
@@ -10,12 +11,13 @@ const ChannelList = ({
 }) => {
   return (
     <List>
-      {availableChannels.map(channel => (
+      {availableChannels.map((channel, i) => (
         <Item
           selected={selectedChannels.includes(channel)}
+          key={i}
           onClick={() => toggleChannel(channel)}
         >
-          {channel}
+          {reactStringReplace(channel, '-', () => ' ')}
         </Item>
       ))}
     </List>
