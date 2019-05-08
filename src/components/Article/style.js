@@ -37,7 +37,7 @@ export const Title = styled.p`
   font-size: 17px;
 `
 
-export const Date = styled.p`
+export const PublishDate = styled.p`
   font-size: 14px;
   color: #a4b0be;
 `

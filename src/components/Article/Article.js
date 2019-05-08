@@ -4,7 +4,7 @@ import {
   Image,
   Content,
   Title,
-  Date,
+  PublishDate,
   Description
 } from './style'
 
@@ -12,12 +12,34 @@ const Article = ({
   viewMode,
   render: { title, description, publishedAt, urlToImage }
 }) => {
+  const convertDate = dateIso => {
+    const date = new Date(dateIso)
+    const months = [
+      'January',
+      'February',
+      'March',
+      'April',
+      'May',
+      'June',
+      'July',
+      'August',
+      'September',
+      'October',
+      'November',
+      'December'
+    ]
+
+    return `${date.getUTCDate()} ${
+      months[date.getUTCMonth()]
+    } ${date.getUTCFullYear()}`
+  }
+
   return (
     <ArticleStyled>
       {viewMode === 'image' && <Image imgUrl={urlToImage} />}
       <Content viewMode={viewMode}>
         <Title>{title}</Title>
-        <Date>{publishedAt}</Date>
+        <PublishDate>{convertDate(publishedAt)}</PublishDate>
         {viewMode === 'big' && <Description>{description}</Description>}
       </Content>
     </ArticleStyled>
