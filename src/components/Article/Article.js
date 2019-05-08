@@ -29,9 +29,14 @@ const Article = ({
       'December'
     ]
 
-    return `${date.getUTCDate()} ${
-      months[date.getUTCMonth()]
-    } ${date.getUTCFullYear()}`
+    const monthDay = date.getUTCDate()
+    const month = months[date.getUTCMonth()]
+    const year = date.getUTCFullYear()
+    const time = `${date.getUTCHours()}:${('0' + date.getUTCMinutes()).substr(
+      -2
+    )}`
+
+    return `${monthDay} ${month} ${year} ${time}`
   }
 
   return (
