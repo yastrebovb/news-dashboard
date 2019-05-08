@@ -21,7 +21,7 @@ export const fetchNews = (channels = channels.toString()) => {
     dispatch(requestNews())
 
     return fetch(
-      `https://newsapi.org/v2/everything?language=en&sources=${channels}&pageSize=100&apiKey=${API_KEY}`
+      `https://newsapi.org/v2/top-headlines?language=en&sources=${channels}&pageSize=100&apiKey=${API_KEY}`
     )
       .then(res => res.json())
       .catch(err => dispatch(newsApiFail()))

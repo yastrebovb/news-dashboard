@@ -35,7 +35,7 @@ const Article = ({
   }
 
   return (
-    <ArticleStyled>
+    <ArticleStyled viewMode={viewMode}>
       {viewMode === 'image' && <Image imgUrl={urlToImage} />}
       <Content viewMode={viewMode}>
         <Title>{title}</Title>

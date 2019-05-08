@@ -34,10 +34,12 @@ export const Content = styled.div`
 `
 
 export const Title = styled.p`
+  margin-bottom: 10px;
   font-size: 17px;
 `
 
 export const PublishDate = styled.p`
+  margin: 3px 0;
   font-size: 14px;
   color: #a4b0be;
 `
