@@ -21,6 +21,12 @@ export default (state = newsDefaultState, action) => {
         lastUpdated: action.updateDate,
         all: action.payload.articles
       }
+    case API_FAIL:
+      return {
+        ...state,
+        loading: false,
+        failed: true
+      }
     default:
       return state
   }
