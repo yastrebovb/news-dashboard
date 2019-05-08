@@ -39,6 +39,7 @@ export const Option = styled.li`
   font-size: 18px;
   color: ${props => (props.active ? '#3a3c4c' : '#ccd2e7')};
   cursor: pointer;
+  transition: all 0.15s linear;
 `
 
 export const Articles = styled.div`

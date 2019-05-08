@@ -15,7 +15,7 @@ const Article = ({
   return (
     <ArticleStyled>
       {viewMode === 'image' && <Image imgUrl={urlToImage} />}
-      <Content>
+      <Content viewMode={viewMode}>
         <Title>{title}</Title>
         <Date>{publishedAt}</Date>
         {viewMode === 'big' && <Description>{description}</Description>}
