@@ -21,7 +21,13 @@ export const PreferencesPageStyled = styled.div`
     background: linear-gradient(110deg, #fa957b 0%, #f7496a 100%);
     z-index: -1;
     content: '';
-    animation: ${backgroundGrow} 0.3s ease-out;
+  }
+
+  &.page-enter-active:before {
+    animation: ${backgroundGrow} 0.3s;
+  }
+  &.page-exit-active:before {
+    animation: ${backgroundGrow} 0.45s reverse both;
   }
 `
 

@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { fetchNews } from '../../actions/news.js'
 import { getLastUpdateDiff } from '../../selectors/'
 import Channel from '../Channel/'
+import { HomePageStyled } from './style'
 
 class HomePage extends Component {
   componentDidMount() {
@@ -15,11 +16,11 @@ class HomePage extends Component {
 
   render() {
     return (
-      <div>
+      <HomePageStyled>
         {this.props.channels.map(channel => (
           <Channel channelId={channel} key={channel} />
         ))}
-      </div>
+      </HomePageStyled>
     )
   }
 }
