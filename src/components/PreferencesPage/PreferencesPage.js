@@ -1,11 +1,11 @@
 import React from 'react'
-import ChannelList from '../../containers/ChannelList'
+import Preferences from '../../containers/Preferences'
 import { PreferencesPageStyled, Heading } from './style'
 
 const PreferencesPage = () => (
   <PreferencesPageStyled>
     <Heading>Choose your prefered media</Heading>
-    <ChannelList />
+    <Preferences />
   </PreferencesPageStyled>
 )
 

@@ -4,7 +4,7 @@ import { toggleChannel } from '../../actions/configuration'
 import reactStringReplace from 'react-string-replace'
 import { List, Item } from './style'
 
-const ChannelList = ({
+const Preferences = ({
   availableChannels,
   selectedChannels,
   toggleChannel
@@ -42,4 +42,4 @@ const mapDispatchToProps = dispatch => {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(ChannelList)
+)(Preferences)

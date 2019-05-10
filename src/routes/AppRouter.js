@@ -10,7 +10,7 @@ import { GlobalStyle } from '../styles/global'
 const AnimatedSwitch = withRouter(({ location }) => (
   <TransitionGroup component={null}>
     <CSSTransition
-      timeout={450}
+      timeout={350}
       classNames="page"
       mountOnEnter={true}
       unmountOnExit={true}

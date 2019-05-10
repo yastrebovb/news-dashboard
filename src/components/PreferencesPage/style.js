@@ -1,13 +1,5 @@
 import styled, { keyframes } from 'styled-components'
-
-const backgroundGrow = keyframes`
-  0% {
-    width: 10vw;
-    height: 10vw;
-    border-bottom-left-radius: 50%;
-    border-bottom-right-radius: 50%;
-  }
-`
+import { backgroundGrow } from '../../styles/animations'
 
 export const PreferencesPageStyled = styled.div`
   padding: 40px 0;
@@ -26,8 +18,13 @@ export const PreferencesPageStyled = styled.div`
   &.page-enter-active:before {
     animation: ${backgroundGrow} 0.3s;
   }
-  &.page-exit-active:before {
-    animation: ${backgroundGrow} 0.45s reverse both;
+
+  &.page-exit-active {
+    text-indent: -9999px;
+
+    &:before {
+      animation: ${backgroundGrow} 0.35s reverse both ease-out;
+    }
   }
 `
 
