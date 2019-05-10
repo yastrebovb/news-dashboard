@@ -24,6 +24,7 @@ export const Image = styled.img`
   height: 60px;
   background-image: url(${props => props.imgUrl});
   background-size: cover;
+  background-color: #f1f2f6;
   border-radius: 50%;
 `
 

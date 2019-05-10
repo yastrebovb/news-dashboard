@@ -41,7 +41,13 @@ const Article = ({
 
   return (
     <ArticleStyled viewMode={viewMode}>
-      {viewMode === 'image' && <Image imgUrl={urlToImage} />}
+      {viewMode === 'image' && (
+        <Image
+          imgUrl={
+            urlToImage || 'https://pipdigz.co.uk/p3/img/placeholder-square.png'
+          }
+        />
+      )}
       <Content viewMode={viewMode}>
         <Title>{title}</Title>
         <PublishDate>{convertDate(publishedAt)}</PublishDate>
