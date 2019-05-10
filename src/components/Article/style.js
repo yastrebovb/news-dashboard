@@ -22,10 +22,12 @@ export const ArticleStyled = styled.article`
 export const Image = styled.img`
   width: 60px;
   height: 60px;
-  background-image: url(${props => props.imgUrl});
+  background-image: url(${props => props.imgUrl}),
+    url('https://pipdigz.co.uk/p3/img/placeholder-square.png');
   background-size: cover;
   background-color: #f1f2f6;
   border-radius: 50%;
+  transition: all 0.3s linear;
 `
 
 export const Content = styled.div`

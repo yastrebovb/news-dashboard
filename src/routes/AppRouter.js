@@ -35,7 +35,6 @@ const AppRouter = () => (
       <SwitchLink firstLink="/" secondLink="preferences" />
       <GlobalStyle />
     </App>
-    />
   </BrowserRouter>
 )
 
