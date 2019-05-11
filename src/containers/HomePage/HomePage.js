@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { fetchNews } from '../../actions/news.js'
 import { getLastUpdateDiff } from '../../selectors/'
 import Channel from '../Channel/'
+import Loading from '../../components/Loading'
 import { HomePageStyled } from './style'
 
 class HomePage extends Component {
@@ -15,11 +16,15 @@ class HomePage extends Component {
   }
 
   render() {
+    const { loading, channels } = this.props
+
     return (
       <HomePageStyled>
-        {this.props.channels.map(channel => (
-          <Channel channelId={channel} key={channel} />
-        ))}
+        {loading ? (
+          <Loading />
+        ) : (
+          channels.map(channel => <Channel channelId={channel} key={channel} />)
+        )}
       </HomePageStyled>
     )
   }
@@ -27,6 +32,7 @@ class HomePage extends Component {
 
 const mapStateToProps = state => {
   return {
+    loading: state.news.loading,
     channels: state.configuration.selectedChannels,
     lastUpdated: getLastUpdateDiff(state)
   }
