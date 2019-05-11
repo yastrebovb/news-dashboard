@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import { fadeInUp } from '../../styles/animations'
+import { media } from '../../styles/templates'
 
 export const ArticleStyled = styled.article`
   display: flex;
@@ -17,6 +18,10 @@ export const ArticleStyled = styled.article`
   &:not(:nth-child(-n + 4)) {
     animation: ${fadeInUp} 0.3s ease-out;
   }
+
+  ${media.phone`
+    margin: 20px auto;
+  `}
 `
 
 export const Image = styled.img`

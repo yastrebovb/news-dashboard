@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { media } from '../../styles/templates'
 
 export const ChannelStyled = styled.div`
   margin: 60px 35px;
@@ -8,6 +9,10 @@ export const ChannelHeader = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  ${media.phone`
+    flex-direction: column;
+  `}
 `
 
 export const Heading = styled.h3`
@@ -16,6 +21,10 @@ export const Heading = styled.h3`
   font-family: 'Playfair Display', Times, serif;
   font-size: 26px;
   font-weight: 600;
+
+  ${media.phone`
+    left: 0;
+  `}
 
   &:after {
     position: absolute;
@@ -30,6 +39,7 @@ export const Heading = styled.h3`
 
 export const Select = styled.ul`
   display: flex;
+  padding-left: 0;
   list-style-type: none;
 `
 
@@ -49,7 +59,16 @@ export const Articles = styled.div`
   &::after {
     content: '';
     flex: auto;
+
+    ${media.phone`
+      flex: none;
+    `}
   }
+
+  ${media.tablet`
+    max-width: 720px;
+    margin: 0 auto;
+  `}
 `
 
 export const Button = styled.button`
