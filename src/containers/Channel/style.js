@@ -88,4 +88,9 @@ export const Button = styled.button`
   &:hover {
     color: #3a3c4c;
   }
+
+  ${media.phone`
+    display: block;
+    margin: 0 auto;
+  `}
 `
