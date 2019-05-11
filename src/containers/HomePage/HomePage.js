@@ -34,7 +34,7 @@ class HomePage extends Component {
 HomePage.propTypes = {
   lastUpdated: PropTypes.number.isRequired,
   fetchNews: PropTypes.func.isRequired,
-  channels: PropTypes.array.isRequired,
+  channels: PropTypes.arrayOf(PropTypes.string).isRequired,
   loading: PropTypes.bool.isRequired
 }
 

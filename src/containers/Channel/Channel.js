@@ -82,7 +82,7 @@ class Channel extends Component {
 
 Channel.propTypes = {
   channelName: PropTypes.string.isRequired,
-  articles: PropTypes.array.isRequired
+  articles: PropTypes.arrayOf(PropTypes.object).isRequired
 }
 
 const makeMapStateToProps = () => {

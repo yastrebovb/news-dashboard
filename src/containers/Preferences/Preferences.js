@@ -26,8 +26,8 @@ const Preferences = ({
 }
 
 Preferences.propTypes = {
-  availableChannels: PropTypes.array.isRequired,
-  selectedChannels: PropTypes.array.isRequired,
+  availableChannels: PropTypes.arrayOf(PropTypes.string).isRequired,
+  selectedChannels: PropTypes.arrayOf(PropTypes.string).isRequired,
   toggleChannel: PropTypes.func.isRequired
 }
 
