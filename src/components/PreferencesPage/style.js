@@ -1,5 +1,9 @@
-import styled, { keyframes } from 'styled-components'
-import { backgroundGrow } from '../../styles/animations'
+import styled from 'styled-components'
+import {
+  backgroundGrowTop,
+  backgroundGrowBottom
+} from '../../styles/animations'
+import { media } from '../../styles/templates'
 
 export const PreferencesPageStyled = styled.div`
   padding: 40px 0;
@@ -13,17 +17,30 @@ export const PreferencesPageStyled = styled.div`
     background: linear-gradient(110deg, #fa957b 0%, #f7496a 100%);
     z-index: -1;
     content: '';
+
+    ${media.tablet`
+      top: unset;
+      bottom: 0;
+    `}
   }
 
   &.page-enter-active:before {
-    animation: ${backgroundGrow} 0.3s;
+    animation: ${backgroundGrowTop} 0.3s;
+
+    ${media.tablet`
+      animation: ${backgroundGrowBottom} 0.3s;
+    `}
   }
 
   &.page-exit-active {
     text-indent: -9999px;
 
     &:before {
-      animation: ${backgroundGrow} 0.35s reverse both ease-out;
+      animation: ${backgroundGrowTop} 0.35s reverse both ease-out;
+
+      ${media.tablet`
+        animation: ${backgroundGrowBottom} 0.35s reverse both ease-out;
+      `}
     }
   }
 `

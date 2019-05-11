@@ -1,16 +1,15 @@
 import React from 'react'
-import { withRouter, NavLink } from 'react-router-dom'
-import { defaultStyle, activeStyle } from './style'
+import { withRouter } from 'react-router-dom'
+import { NavLinkStyled } from './style'
 
 const SwitchLink = withRouter(
   ({ location: { pathname }, firstLink, secondLink }) => (
-    <NavLink
+    <NavLinkStyled
       to={pathname === firstLink ? secondLink : firstLink}
-      style={defaultStyle}
-      activeStyle={activeStyle}
+      activeClassName="active"
     >
       +
-    </NavLink>
+    </NavLinkStyled>
   )
 )
 
