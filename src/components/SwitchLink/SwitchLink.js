@@ -1,5 +1,6 @@
 import React from 'react'
 import { withRouter } from 'react-router-dom'
+import PropTypes from 'prop-types'
 import { NavLinkStyled } from './style'
 
 const SwitchLink = withRouter(
@@ -12,5 +13,10 @@ const SwitchLink = withRouter(
     </NavLinkStyled>
   )
 )
+
+SwitchLink.propTypes = {
+  firstLink: PropTypes.string.isRequired,
+  secondLink: PropTypes.string.isRequired
+}
 
 export default SwitchLink

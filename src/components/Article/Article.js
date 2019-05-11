@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import {
   ArticleStyled,
   Image,
@@ -55,6 +56,16 @@ const Article = ({
       </Content>
     </ArticleStyled>
   )
+}
+
+Article.propTypes = {
+  viewMode: PropTypes.string.isRequired,
+  render: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    publishedAt: PropTypes.string.isRequired,
+    urlToImage: PropTypes.string
+  })
 }
 
 export default Article
