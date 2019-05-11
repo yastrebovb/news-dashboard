@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import PropTypes from 'prop-types'
 import { makeGetChannelName, makeGetArticlesByChannel } from '../../selectors/'
 import Article from '../../components/Article'
 import {
@@ -11,7 +12,6 @@ import {
   Heading,
   Button
 } from './style'
-
 class Channel extends Component {
   state = {
     visibleArticles: 4,
@@ -78,6 +78,11 @@ class Channel extends Component {
       </ChannelStyled>
     )
   }
+}
+
+Channel.propTypes = {
+  channelName: PropTypes.string.isRequired,
+  articles: PropTypes.array.isRequired
 }
 
 const makeMapStateToProps = () => {

@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import PropTypes from 'prop-types'
 import { fetchNews } from '../../actions/news.js'
 import { getLastUpdateDiff } from '../../selectors/'
 import Channel from '../Channel/'
@@ -28,6 +29,13 @@ class HomePage extends Component {
       </HomePageStyled>
     )
   }
+}
+
+HomePage.propTypes = {
+  lastUpdated: PropTypes.number.isRequired,
+  fetchNews: PropTypes.func.isRequired,
+  channels: PropTypes.array.isRequired,
+  loading: PropTypes.bool.isRequired
 }
 
 const mapStateToProps = state => {

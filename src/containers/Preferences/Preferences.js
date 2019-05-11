@@ -1,5 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import PropTypes from 'prop-types'
 import { toggleChannel } from '../../actions/configuration'
 import reactStringReplace from 'react-string-replace'
 import { List, Item } from './style'
@@ -22,6 +23,12 @@ const Preferences = ({
       ))}
     </List>
   )
+}
+
+Preferences.propTypes = {
+  availableChannels: PropTypes.array.isRequired,
+  selectedChannels: PropTypes.array.isRequired,
+  toggleChannel: PropTypes.func.isRequired
 }
 
 const mapStateToProps = state => {
