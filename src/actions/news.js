@@ -16,12 +16,12 @@ const newsApiFail = () => ({
   type: API_FAIL
 })
 
-export const fetchNews = (channels = channels.toString()) => {
+export const fetchNews = channels => {
   return dispatch => {
     dispatch(requestNews())
 
     return fetch(
-      `https://newsapi.org/v2/top-headlines?language=en&sources=${channels}&pageSize=100&apiKey=${API_KEY}`
+      `https://newsapi.org/v2/top-headlines?language=en&sources=${channels.toString()}&pageSize=100&apiKey=${API_KEY}`
     )
       .then(res => res.json())
       .catch(err => dispatch(newsApiFail()))
