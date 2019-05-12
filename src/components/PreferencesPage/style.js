@@ -16,6 +16,7 @@ export const PreferencesPageStyled = styled.div`
     height: 100vh;
     background: linear-gradient(110deg, #fa957b 0%, #f7496a 100%);
     z-index: -1;
+    will-change: width, height;
     content: '';
 
     ${media.tablet`
@@ -39,7 +40,7 @@ export const PreferencesPageStyled = styled.div`
       animation: ${backgroundGrowTop} 0.35s reverse both ease-out;
 
       ${media.tablet`
-        animation: ${backgroundGrowBottom} 0.35s reverse both ease-out;
+        animation: ${backgroundGrowBottom} 0.3s reverse both ease-out;
       `}
     }
   }

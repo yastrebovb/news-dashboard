@@ -3,6 +3,12 @@ import { media } from '../../styles/templates'
 
 export const ChannelStyled = styled.div`
   margin: 60px 35px;
+
+  ${media.phone`
+    &:first-child {
+      margin-top: 12px;
+    }
+  `}
 `
 
 export const ChannelHeader = styled.div`
@@ -91,6 +97,6 @@ export const Button = styled.button`
 
   ${media.phone`
     display: block;
-    margin: 0 auto;
+    margin: 12px auto;
   `}
 `

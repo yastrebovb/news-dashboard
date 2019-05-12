@@ -10,6 +10,7 @@ export const GlobalStyle = createGlobalStyle`
     font-family: 'Lato', sans-serif;
     color: #3a3c4c;
     background-color: #f6f7fb;
+    overflow-x: hidden;
   }
 
   html, body, #root{
