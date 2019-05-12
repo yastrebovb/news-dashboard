@@ -12,7 +12,6 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "deploy": "serve -s build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "heroku-postbuild": "npm run build"
@@ -27,6 +26,7 @@
     "not op_mini all"
   ],
   "devDependencies": {
+    "@emotion/core": "^10.0.10",
     "normalize.css": "^8.0.1",
     "prop-types": "^15.7.2",
     "react-redux": "^7.0.2",
@@ -38,7 +38,6 @@
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.3.0",
     "reselect": "^4.0.0",
-    "serve": "^11.0.0",
     "styled-components": "^4.2.0",
     "whatwg-fetch": "^3.0.0"
   }
